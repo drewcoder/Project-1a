@@ -31,6 +31,7 @@
 		F797863827CA71F0000FCB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F797863F27CA8268000FCB8F /* SpaceDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceDust.sks; sourceTree = "<group>"; };
 		F797864027CA8268000FCB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F797864527CAA689000FCB8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Project1/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		F797861C27CA71EF000FCB8F = {
 			isa = PBXGroup;
 			children = (
+				F797864527CAA689000FCB8F /* README.md */,
 				F797863F27CA8268000FCB8F /* SpaceDust.sks */,
 				F797864027CA8268000FCB8F /* Assets.xcassets */,
 				F797862727CA71EF000FCB8F /* Project1 */,
