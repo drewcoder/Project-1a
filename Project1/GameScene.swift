@@ -13,6 +13,8 @@ class GameScene: SKScene {
     // Player is created here so it can be used throughout the game
     
     let player = SKSpriteNode(imageNamed: "player-rocket.png")
+    var touchingPlayer = false
+    
     
     
     override func didMove(to view: SKView) {
@@ -40,14 +42,42 @@ class GameScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         // this method is called when the user touches the screen
+        // check to see if location contains the player if it does make touchingPlayer true
+        
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let tappedNodes = nodes(at: location)
+        
+        if tappedNodes.contains(player) {
+            touchingPlayer = true
+            
+        }
+        
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // if player is being touched move to new location
+        
+        guard touchingPlayer else { return }
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        player.position = location
+        
+        
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // this method is called when the user stops touching the screen
+        
+        // this method is called when the user stops touching the screen and sets touchingPlayer to false
+        
+        touchingPlayer = false
     }
 
     override func update(_ currentTime: TimeInterval) {
+        
         // this method is called before each frame is rendered
     }
 }
