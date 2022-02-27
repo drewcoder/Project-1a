@@ -10,7 +10,7 @@ import GameplayKit
 
 @objcMembers
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Player is created here so it can be used throughout the game
     
@@ -46,7 +46,12 @@ class GameScene: SKScene {
         
         player.position.x = -400
         player.zPosition = 1
+        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
+        player.physicsBody?.categoryBitMask = 1
         addChild(player)
+        
+        physicsWorld.contactDelegate = self
+        
         
      
     }
@@ -111,7 +116,25 @@ class GameScene: SKScene {
             sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
             sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
             sprite.physicsBody?.linearDamping = 0.0
-            
+            sprite.physicsBody?.contactTestBitMask = 1
+            sprite.physicsBody?.categoryBitMask = 0
+        
         }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+        
+        if nodeA == player {
+            playerHit(nodeB)
+        } else {
+            playerHit(nodeA)
+        }
+    }
+    
+    func playerHit(_ node: SKNode) {
+        player.removeFromParent()
+    }
+    
     }
 
