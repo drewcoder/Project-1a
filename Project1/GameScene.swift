@@ -19,6 +19,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var gameTimer: Timer?
     
+    let scoreLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Bold")
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "SCORE: \(score)"
+        }
+    }
+    
+    let music = SKAudioNode(fileNamed: "overworld.mp3")
+    
+    
+    
     
     override func didMove(to view: SKView) {
         
@@ -52,7 +63,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.contactDelegate = self
         
+        // Score tracking
         
+        scoreLabel.zPosition = 2
+        scoreLabel.position.y = 300
+        addChild(scoreLabel)
+        
+        score = 0
+        addChild(music)
      
     }
 
@@ -101,6 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createEnemy() {
             
             // Code goes here
+        createBonus()
         
        
         let randomDistribution = GKRandomDistribution(lowestValue: -350, highestValue: 350)
@@ -121,6 +140,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         }
     
+    func createBonus() {
+            
+            // Code goes here
+        
+      
+        
+        let randomDistribution = GKRandomDistribution(lowestValue: -350, highestValue: 350)
+        let sprite = SKSpriteNode(imageNamed: "energy")
+        
+        
+            
+            sprite.position = CGPoint(x: 500, y: randomDistribution.nextInt())
+            sprite.name = "bonus"
+            sprite.zPosition = 1
+            addChild(sprite)
+            
+            sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+            sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
+            sprite.physicsBody?.linearDamping = 0.0
+            sprite.physicsBody?.contactTestBitMask = 1
+            sprite.physicsBody?.categoryBitMask = 0
+            sprite.physicsBody?.collisionBitMask = 0
+            
+        
+        }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
@@ -133,7 +178,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func playerHit(_ node: SKNode) {
+        if node.name == "bonus" {
+            score += 1
+            node.removeFromParent()
+            let sound = SKAction.playSoundFileNamed("bonus.wav", waitForCompletion: false)
+            run (sound)
+            
+            return
+        }
         player.removeFromParent()
+                let sound = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
+                run (sound)
+                
+        
     }
     
     }
