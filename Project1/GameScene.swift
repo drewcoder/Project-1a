@@ -8,6 +8,8 @@
 import SpriteKit
 import GameplayKit
 
+@objcMembers
+
 class GameScene: SKScene {
     
     // Player is created here so it can be used throughout the game
@@ -15,6 +17,7 @@ class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed: "player-rocket.png")
     var touchingPlayer = false
     
+    var gameTimer: Timer?
     
     
     override func didMove(to view: SKView) {
@@ -25,6 +28,11 @@ class GameScene: SKScene {
         let background = SKSpriteNode(imageNamed: "space.jpg")
         background.zPosition = -1
         addChild(background)
+        
+        // starts timer for enemy creation
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.35, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        
         
         // We modify the snow particles to create space dust and move time ahead to fill screen at game start
         
@@ -39,6 +47,8 @@ class GameScene: SKScene {
         player.position.x = -400
         player.zPosition = 1
         addChild(player)
+        
+     
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,4 +90,28 @@ class GameScene: SKScene {
         
         // this method is called before each frame is rendered
     }
-}
+    
+   
+    
+    func createEnemy() {
+            
+            // Code goes here
+        
+       
+        let randomDistribution = GKRandomDistribution(lowestValue: -350, highestValue: 350)
+        let sprite = SKSpriteNode(imageNamed: "asteroid")
+        
+        
+            
+            sprite.position = CGPoint(x: 500, y: randomDistribution.nextInt())
+            sprite.name = "enemy"
+            sprite.zPosition = 1
+            addChild(sprite)
+            
+            sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+            sprite.physicsBody?.velocity = CGVector(dx: -500, dy: 0)
+            sprite.physicsBody?.linearDamping = 0.0
+            
+        }
+    }
+
