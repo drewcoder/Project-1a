@@ -20,7 +20,6 @@
 		F797863627CA71F0000FCB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F797863527CA71F0000FCB8F /* Assets.xcassets */; };
 		F797863927CA71F0000FCB8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F797863727CA71F0000FCB8F /* LaunchScreen.storyboard */; };
 		F797864127CA8268000FCB8F /* SpaceDust.sks in Resources */ = {isa = PBXBuildFile; fileRef = F797863F27CA8268000FCB8F /* SpaceDust.sks */; };
-		F797864227CA8268000FCB8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F797864027CA8268000FCB8F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +37,6 @@
 		F797863527CA71F0000FCB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F797863827CA71F0000FCB8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F797863F27CA8268000FCB8F /* SpaceDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceDust.sks; sourceTree = "<group>"; };
-		F797864027CA8268000FCB8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F797864627CAAA97000FCB8F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +56,6 @@
 			children = (
 				F797864627CAAA97000FCB8F /* README.md */,
 				F797863F27CA8268000FCB8F /* SpaceDust.sks */,
-				F797864027CA8268000FCB8F /* Assets.xcassets */,
 				F797862727CA71EF000FCB8F /* Project1 */,
 				F797862627CA71EF000FCB8F /* Products */,
 			);
@@ -156,7 +153,6 @@
 				F74F295627CBDF1300A08BC3 /* bonus.wav in Resources */,
 				F74F295827CBE1BE00A08BC3 /* Explosion.sks in Resources */,
 				F797863927CA71F0000FCB8F /* LaunchScreen.storyboard in Resources */,
-				F797864227CA8268000FCB8F /* Assets.xcassets in Resources */,
 				F797864127CA8268000FCB8F /* SpaceDust.sks in Resources */,
 				F797862D27CA71EF000FCB8F /* Actions.sks in Resources */,
 				F755EA3F27CB358700167242 /* overworld.mp3 in Resources */,
