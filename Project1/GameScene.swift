@@ -113,6 +113,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // this method is called before each frame is rendered
         
+        for node in children {
+            if node.position.x < -700 {
+                node.removeFromParent()
+            }
+        }
+        
         if player.position.x < -400 {
             player.position.x = -400
         } else if player.position.x > 400 {
@@ -210,8 +216,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let gameOver = SKSpriteNode(imageNamed: "gameOver-2")
         gameOver.zPosition = 10
         addChild(gameOver)
+        // wait for two seconds then run some code
         
-        // wait for two sec
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            
+            // create a new scene from GameScene.sks
+            
+            if let scene = GameScene(fileNamed: "GameScene"){
+                // make it strech to fill all available space
+                scene.scaleMode = .aspectFill
+                
+                // present it immediately
+                self.view?.presentScene(scene)
+                
+            }
+        }
         
                 let sound = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
                 run (sound)
