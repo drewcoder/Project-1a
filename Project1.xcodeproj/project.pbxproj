@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F74F295427CBDDB700A08BC3 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = F74F295327CBDDB700A08BC3 /* explosion.wav */; };
 		F74F295627CBDF1300A08BC3 /* bonus.wav in Resources */ = {isa = PBXBuildFile; fileRef = F74F295527CBDF1300A08BC3 /* bonus.wav */; };
+		F74F295827CBE1BE00A08BC3 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = F74F295727CBE1BE00A08BC3 /* Explosion.sks */; };
 		F755EA3F27CB358700167242 /* overworld.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F755EA3E27CB358700167242 /* overworld.mp3 */; };
 		F797862927CA71EF000FCB8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F797862827CA71EF000FCB8F /* AppDelegate.swift */; };
 		F797862B27CA71EF000FCB8F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F797862A27CA71EF000FCB8F /* GameScene.sks */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		F74F295327CBDDB700A08BC3 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 		F74F295527CBDF1300A08BC3 /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bonus.wav; sourceTree = "<group>"; };
+		F74F295727CBE1BE00A08BC3 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		F755EA3E27CB358700167242 /* overworld.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = overworld.mp3; sourceTree = "<group>"; };
 		F797862527CA71EF000FCB8F /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F797862827CA71EF000FCB8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				F797862A27CA71EF000FCB8F /* GameScene.sks */,
 				F797862C27CA71EF000FCB8F /* Actions.sks */,
 				F797862E27CA71EF000FCB8F /* GameScene.swift */,
+				F74F295727CBE1BE00A08BC3 /* Explosion.sks */,
 				F755EA3E27CB358700167242 /* overworld.mp3 */,
 				F74F295527CBDF1300A08BC3 /* bonus.wav */,
 				F74F295327CBDDB700A08BC3 /* explosion.wav */,
@@ -151,6 +154,7 @@
 				F797862B27CA71EF000FCB8F /* GameScene.sks in Resources */,
 				F797863627CA71F0000FCB8F /* Assets.xcassets in Resources */,
 				F74F295627CBDF1300A08BC3 /* bonus.wav in Resources */,
+				F74F295827CBE1BE00A08BC3 /* Explosion.sks in Resources */,
 				F797863927CA71F0000FCB8F /* LaunchScreen.storyboard in Resources */,
 				F797864227CA8268000FCB8F /* Assets.xcassets in Resources */,
 				F797864127CA8268000FCB8F /* SpaceDust.sks in Resources */,

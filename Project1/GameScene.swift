@@ -186,7 +186,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             return
         }
+        if let particles = SKEmitterNode(fileNamed: "Explosion.sks") {
+            particles.position = player.position
+            particles.zPosition = 3
+            addChild(particles)
+            
+        }
         player.removeFromParent()
+        music.removeFromParent()
+        let gameOver = SKSpriteNode(imageNamed: "gameOver-2")
+        gameOver.zPosition = 10
+        addChild(gameOver)
+        
                 let sound = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
                 run (sound)
                 
